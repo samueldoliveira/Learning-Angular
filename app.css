@@ -1,0 +1,19 @@
+body {
+  background-color: #ADD8E6;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.back-lista{
+  background-color: #648C99;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10%;
+}
+
+.botaoAdicionar{
+  margin-left: 40%;
+}
+
+.negrito{
+  font-weight: bold;
+}
