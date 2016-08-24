@@ -1,9 +1,9 @@
 var app = angular.module('app', []);
 app.controller('MostrandoContatos', function($scope){
   $scope.aplicacao = "Lista Telefônica";
-  $scope.contatos = [{nome: 'Samuel', telefone: '987944144'},
-                      {nome: 'Hayssa', telefone: '111111111'},
-                    {nome: 'helem', telefone: '999999999'}];
+  $scope.contatos = [{nome: 'Samuel', telefone: '987944144', operadora: {nome: 'Oi'}, data: new Date()},
+                      {nome: 'Hayssa', telefone: '111111111', operadora: {nome: 'Tim'}, data: new Date()},
+                    {nome: 'Helem', telefone: '999999999', operadora: {nome: 'Vivo'}, data: new Date()}];
   $scope.operadoras = [{nome: "Oi"},
                       {nome: "Vivo"},
                       {nome: "Tim"},
@@ -11,6 +11,7 @@ app.controller('MostrandoContatos', function($scope){
   $scope.adicionarContato = function(contato){
     $scope.contatos.push(contato);
     delete $scope.contato;
+    $scope.contatoForm.$setPristine();
   };
   $scope.apagarContatos = function(contatos){
     $scope.contatos = contatos.filter(function (contato) {
@@ -21,5 +22,8 @@ app.controller('MostrandoContatos', function($scope){
     return contatos.some(function (contato){
       return contato.selecionado;
     });
+  };
+  $scope.ordenarPor = function(campo){
+    $scope.criterioOrdenacao = campo;
   };
 });
