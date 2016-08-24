@@ -25,5 +25,6 @@ app.controller('MostrandoContatos', function($scope){
   };
   $scope.ordenarPor = function(campo){
     $scope.criterioOrdenacao = campo;
+    $scope.direcaoOrdenacao = !$scope.direcaoOrdenacao;
   };
 });
