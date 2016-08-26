@@ -9,6 +9,7 @@ app.controller('MostrandoContatos', function($scope){
                       {nome: "Tim"},
                       {nome: "Claro"}];
   $scope.adicionarContato = function(contato){
+    contato.data = new Date();
     $scope.contatos.push(contato);
     delete $scope.contato;
     $scope.contatoForm.$setPristine();
